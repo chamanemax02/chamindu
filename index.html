@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamindu Ransika - Full-Stack Developer & AI Creative</title>
-    <meta name="description" content="Full-Stack Developer & AI Creative transforming ideas into exceptional digital experiences. Specializing in modern web technologies and AI-powered solutions.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Chamindu Ransika</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css  ">
     <style>
         /* --- General Styles --- */
         :root {
@@ -18,16 +17,10 @@
             --card-bg: #2a2a2a;
             --gradient-primary: linear-gradient(135deg, #00ffa3, #4ecdc4);
             --gradient-secondary: linear-gradient(135deg, #ff6b6b, #ffa726);
-            --gradient-tertiary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
+            margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -35,28 +28,9 @@
             overflow-x: hidden;
         }
 
-        a { 
-            text-decoration: none; 
-            color: inherit; 
-            transition: all 0.3s ease; 
-        }
-        
-        ul { 
-            list-style: none; 
-            padding: 0; 
-        }
-        
-        img { 
-            max-width: 100%; 
-            height: auto; 
-            display: block; 
-        }
-
-        button {
-            cursor: pointer;
-            border: none;
-            outline: none;
-        }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; padding: 0; }
+        img { max-width: 100%; height: auto; display: block; }
 
         /* --- Animations --- */
         @keyframes fadeInUp {
@@ -145,28 +119,19 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .logo:hover {
             animation: pulse 1s infinite;
         }
         
-        .nav-links { 
-            display: flex; 
-            gap: 30px; 
-        }
-        
+        .nav-links { display: flex; gap: 30px; }
         .nav-links a { 
             position: relative;
             transition: all 0.3s ease;
             font-weight: 500;
         }
-        
-        .nav-links a:hover { 
-            color: var(--primary-color); 
-        }
-        
+        .nav-links a:hover { color: var(--primary-color); }
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -177,7 +142,6 @@
             background: var(--gradient-primary);
             transition: width 0.3s ease;
         }
-        
         .nav-links a:hover::after {
             width: 100%;
         }
@@ -194,14 +158,11 @@
             border: none;
             cursor: pointer;
             display: inline-block;
-            text-align: center;
         }
-        
         .btn:hover { 
             transform: translateY(-2px) scale(1.05);
             box-shadow: 0 10px 25px rgba(0, 255, 163, 0.3);
         }
-        
         .btn:active {
             transform: translateY(0) scale(1);
         }
@@ -217,7 +178,7 @@
 
         /* --- Hero Section --- */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -277,7 +238,6 @@
             gap: 40px;
             margin: 40px 0;
             animation: fadeInUp 1s ease-out 0.9s both;
-            flex-wrap: wrap;
         }
 
         .stat-item {
@@ -302,7 +262,6 @@
             margin-bottom: 40px; 
             animation: fadeInUp 1s ease-out 1.2s both;
         }
-        
         .social-icons a {
             font-size: 28px;
             margin: 0 15px;
@@ -311,12 +270,10 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
         .social-icons a:hover { 
             color: var(--primary-color); 
             transform: translateY(-5px) scale(1.2);
         }
-        
         .social-icons a:hover::after {
             content: '';
             position: absolute;
@@ -439,17 +396,14 @@
             opacity: 0;
             transform: translateY(30px);
         }
-        
         .service-card.animate {
             animation: fadeInUp 1s ease-out forwards;
         }
-        
         .service-card:hover { 
             transform: translateY(-10px) scale(1.02); 
             border-color: var(--primary-color);
             box-shadow: 0 15px 40px rgba(0, 255, 163, 0.2);
         }
-        
         .service-card::before {
             content: '';
             position: absolute;
@@ -460,18 +414,15 @@
             background: linear-gradient(90deg, transparent, rgba(0, 255, 163, 0.1), transparent);
             transition: left 0.5s;
         }
-        
         .service-card:hover::before {
             left: 100%;
         }
-        
         .service-card i { 
             font-size: 50px; 
             color: var(--primary-color); 
             margin-bottom: 25px;
             transition: all 0.3s ease;
         }
-        
         .service-card:hover i {
             transform: scale(1.2) rotate(10deg);
             animation: glow 1s ease-in-out infinite;
@@ -548,17 +499,13 @@
             position: relative;
             opacity: 0;
             transform: translateY(30px);
-            border: 1px solid #333;
         }
-        
         .portfolio-item.animate {
             animation: fadeInUp 1s ease-out forwards;
         }
-        
         .portfolio-item:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 15px 40px rgba(0, 255, 163, 0.2);
-            border-color: var(--primary-color);
         }
 
         .portfolio-image {
@@ -640,17 +587,13 @@
             transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(30px);
-            border: 1px solid #333;
         }
-        
         .testimonial-card.animate {
             animation: fadeInUp 1s ease-out forwards;
         }
-        
         .testimonial-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 255, 163, 0.1);
-            border-color: var(--primary-color);
         }
 
         .testimonial-card::before {
@@ -694,11 +637,8 @@
         }
 
         .testimonial-rating {
-            margin-bottom: 15px;
-        }
-
-        .testimonial-rating i {
             color: #ffa726;
+            margin-bottom: 15px;
         }
 
         /* --- Contact Section --- */
@@ -821,89 +761,16 @@
             color: #777;
         }
 
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .newsletter-form input {
-            padding: 12px;
-            background: var(--bg-color);
-            border: 2px solid #333;
-            border-radius: 25px;
-            color: var(--text-color);
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(0, 255, 163, 0.2);
-        }
-
-        .newsletter-form .btn {
-            width: 100%;
-            margin-top: 10px;
-        }
-
         /* --- Mobile Responsive --- */
         @media (max-width: 768px) {
-            .hero h1 { 
-                font-size: 2.5rem; 
-            }
-            
-            .nav-links { 
-                display: none; 
-            }
-            
-            .hero-stats { 
-                flex-direction: column; 
-                gap: 20px; 
-            }
-            
-            .hero-buttons { 
-                flex-direction: column; 
-                align-items: center; 
-            }
-            
-            .about-content { 
-                grid-template-columns: 1fr; 
-                text-align: center; 
-                gap: 40px;
-            }
-            
-            .contact-content { 
-                grid-template-columns: 1fr; 
-                gap: 40px;
-            }
-            
-            .portfolio-filters { 
-                justify-content: flex-start; 
-                overflow-x: auto; 
-            }
-            
-            .footer-content { 
-                grid-template-columns: 1fr; 
-                text-align: center; 
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding: 60px 5%;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .about-content { grid-template-columns: 1fr; text-align: center; }
+            .contact-content { grid-template-columns: 1fr; }
+            .portfolio-filters { justify-content: flex-start; overflow-x: auto; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
         }
 
         /* --- Scroll animations --- */
@@ -966,34 +833,6 @@
             background: var(--primary-color);
             animation: glow 2s ease-in-out infinite;
         }
-
-        /* --- Toast Notification --- */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--card-bg);
-            color: var(--text-color);
-            padding: 20px 30px;
-            border-radius: 10px;
-            border: 1px solid var(--primary-color);
-            transform: translateX(400px);
-            transition: transform 0.3s ease;
-            z-index: 10000;
-            box-shadow: 0 10px 30px rgba(0, 255, 163, 0.2);
-        }
-
-        .toast.show {
-            transform: translateX(0);
-        }
-
-        .toast.success {
-            border-color: var(--primary-color);
-        }
-
-        .toast.error {
-            border-color: var(--secondary-color);
-        }
     </style>
 <base target="_blank">
 </head>
@@ -1003,14 +842,9 @@
         <div class="loading-spinner"></div>
     </div>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <span id="toastMessage"></span>
-    </div>
-
     <!-- Navigation -->
     <nav>
-        <div class="logo" onclick="window.location.href='#home'">Chamindu.dev</div>
+        <div class="logo">Chamindu.dev</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -1043,16 +877,16 @@
             </div>
 
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/chamindu-ransika-1032343a3" target="_blank" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/chamindu-ransika-1032343a3  " target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://fiverr.com/chaminduransika" target="_blank" title="Fiverr">
+                <a href="https://fiverr.com/chaminduransika  " target="_blank" title="Fiverr">
                     <i class="fa-solid fa-briefcase"></i>
                 </a>
-                <a href="https://github.com/chaminduransika" target="_blank" title="GitHub">
+                <a href="https://github.com/chaminduransika  " target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://behance.net/chaminduransika" target="_blank" title="Behance">
+                <a href="https://behance.net/chaminduransika  " target="_blank" title="Behance">
                     <i class="fab fa-behance"></i>
                 </a>
             </div>
@@ -1069,7 +903,7 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-image">
-                <img src="https://i.ibb.co/1Y4GhGCx/1766823635941.jpg" alt="Chamindu Ransika">
+                <img src="https://i.ibb.co/1Y4GhGCx/1766823635941.jpg  " alt="Chamindu Ransika">
             </div>
             <div class="about-text">
                 <h2>Crafting Digital Excellence</h2>
@@ -1227,9 +1061,9 @@
         <div class="portfolio-grid">
             <div class="portfolio-item scroll-animate" data-category="web">
                 <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="E-commerce Platform">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop  " alt="E-commerce Platform">
                     <div class="portfolio-overlay">
-                        <span class="btn">View Project</span>
+                        <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
                 <div class="portfolio-content">
@@ -1246,9 +1080,9 @@
 
             <div class="portfolio-item scroll-animate" data-category="ai">
                 <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="AI Art Gallery">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop  " alt="AI Art Gallery">
                     <div class="portfolio-overlay">
-                        <span class="btn">View Project</span>
+                        <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
                 <div class="portfolio-content">
@@ -1261,76 +1095,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="portfolio-item scroll-animate" data-category="web">
-                <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Corporate Website">
-                    <div class="portfolio-overlay">
-                        <span class="btn">View Project</span>
-                    </div>
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Corporate Website</h3>
-                    <p>Modern corporate website with CMS integration and responsive design.</p>
-                    <div class="portfolio-tech">
-                        <span class="tech-tag">WordPress</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item scroll-animate" data-category="mobile">
-                <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="Mobile Banking App">
-                    <div class="portfolio-overlay">
-                        <span class="btn">View Project</span>
-                    </div>
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Mobile Banking App</h3>
-                    <p>Secure mobile banking application with biometric authentication.</p>
-                    <div class="portfolio-tech">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Security</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item scroll-animate" data-category="design">
-                <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="Brand Identity Design">
-                    <div class="portfolio-overlay">
-                        <span class="btn">View Project</span>
-                    </div>
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Brand Identity Design</h3>
-                    <p>Complete brand identity package including logo, colors, and guidelines.</p>
-                    <div class="portfolio-tech">
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Illustrator</span>
-                        <span class="tech-tag">Photoshop</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item scroll-animate" data-category="ai">
-                <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop" alt="AI Content Generator">
-                    <div class="portfolio-overlay">
-                        <span class="btn">View Project</span>
-                    </div>
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">AI Content Generator</h3>
-                    <p>Web application that generates content using OpenAI GPT models.</p>
-                    <div class="portfolio-tech">
-                        <span class="tech-tag">OpenAI</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Flask</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1350,7 +1114,7 @@
                 </div>
                 <p class="testimonial-text">"Chamindu delivered an exceptional e-commerce website that exceeded our expectations. His attention to detail and technical expertise made the entire process smooth and efficient."</p>
                 <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Sarah Johnson" class="author-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face  " alt="Sarah Johnson" class="author-image">
                     <div class="author-info">
                         <h4>Sarah Johnson</h4>
                         <p>CEO, TechStart Inc.</p>
@@ -1368,7 +1132,7 @@
                 </div>
                 <p class="testimonial-text">"The AI artwork Chamindu created for our marketing campaign was absolutely stunning. His creativity and technical skills in AI art generation are remarkable."</p>
                 <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Michael Chen" class="author-image">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face  " alt="Michael Chen" class="author-image">
                     <div class="author-info">
                         <h4>Michael Chen</h4>
                         <p>Marketing Director, Creative Co.</p>
@@ -1386,7 +1150,7 @@
                 </div>
                 <p class="testimonial-text">"Working with Chamindu was a great experience. He understood our requirements perfectly and delivered a mobile app that our users love. Highly recommended!"</p>
                 <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=100&h=100&fit=crop&crop=face" alt="Emily Davis" class="author-image">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=100&h=100&fit=crop&crop=face  " alt="Emily Davis" class="author-image">
                     <div class="author-info">
                         <h4>Emily Davis</h4>
                         <p>Founder, HealthTech Solutions</p>
@@ -1439,30 +1203,6 @@
                 </div>
             </div>
 
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1479,27 +1219,25 @@
             <div class="footer-section">
                 <h3>Services</h3>
                 <div class="footer-links">
-                    <a href="#services">Web Development</a>
-                    <a href="#services">AI Art Generation</a>
-                    <a href="#services">UI/UX Design</a>
-                    <a href="#services">Digital Marketing</a>
+                    <a href="#">Web Development</a>
+                    <a href="#">AI Art Generation</a>
+                    <a href="#">UI/UX Design</a>
+                    <a href="#">Digital Marketing</a>
                 </div>
             </div>
             <div class="footer-section">
                 <h3>Connect</h3>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/chamindu-ransika-1032343a3" target="_blank">LinkedIn</a>
-                    <a href="https://fiverr.com/chaminduransika" target="_blank">Fiverr</a>
-                    <a href="https://github.com/chaminduransika" target="_blank">GitHub</a>
-                    <a href="https://behance.net/chaminduransika" target="_blank">Behance</a>
+                    <a href="https://www.linkedin.com/in/chamindu-ransika-1032343a3  ">LinkedIn</a>
+                    <a href="https://fiverr.com/chaminduransika  ">Fiverr</a>
+                    <a href="https://github.com/chaminduransika  ">GitHub</a>
+                    <a href="https://behance.net/chaminduransika  ">Behance</a>
                 </div>
             </div>
             <div class="footer-section">
                 <h3>Newsletter</h3>
                 <p>Subscribe to get the latest updates and exclusive content.</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn">Subscribe</button>
+                <form style="margin-top: 15px;" id="newsletterForm">
                 </form>
             </div>
         </div>
@@ -1518,20 +1256,6 @@
                 }, 500);
             }, 1000);
         });
-
-        // Toast notification
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toastMessage');
-            
-            toastMessage.textContent = message;
-            toast.className = `toast ${type}`;
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 5000);
-        }
 
         // Counter animation
         function animateCounter() {
@@ -1628,7 +1352,7 @@
                     // Simulate form submission
                     setTimeout(() => {
                         // Show success message
-                        showToast('Thank you for your message! I will get back to you within 24 hours.');
+                        alert('Thank you for your message! I will get back to you within 24 hours.');
                         
                         // Reset form
                         this.reset();
@@ -1644,7 +1368,7 @@
                 newsletterForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     const email = this.querySelector('input[type="email"]').value;
-                    showToast(`Thank you for subscribing with email: ${email}`);
+                    alert(`Thank you for subscribing with email: ${email}`);
                     this.reset();
                 });
             }
@@ -1768,4 +1492,4 @@
         });
     </script>
 </body>
-</html>
+</html>  
