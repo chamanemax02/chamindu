@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamindu Ransika | Creative Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary: #00ffa3; /* Neon Green */
+            --secondary: #bc13fe; /* Neon Purple */
+            --bg-dark: #0a0a0a;
+            --bg-card: #161616;
+            --text-light: #f0f0f0;
+            --text-gray: #a0a0a0;
+            --accent-pink: #ff006e;
+            --accent-cyan: #00f5ff;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            scroll-behavior: smooth; 
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- ANIMATION KEYFRAMES --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes glitch {
+            0%, 100% { 
+                text-shadow: 0.05em 0 0 var(--primary), -0.05em -0.025em 0 var(--secondary),
+                    0.025em 0.05em 0 var(--accent-cyan);
+            }
+            14% { 
+                text-shadow: 0.05em 0 0 var(--primary), -0.05em -0.025em 0 var(--secondary),
+                    0.025em 0.05em 0 var(--accent-cyan);
+            }
+            15% { 
+                text-shadow: -0.05em -0.025em 0 var(--primary), 0.025em 0.025em 0 var(--secondary),
+                    -0.05em -0.05em 0 var(--accent-cyan);
+            }
+            49% { 
+                text-shadow: -0.05em -0.025em 0 var(--primary), 0.025em 0.025em 0 var(--secondary),
+                    -0.05em -0.05em 0 var(--accent-cyan);
+            }
+            50% { 
+                text-shadow: 0.025em 0.05em 0 var(--primary), 0.05em 0 0 var(--secondary),
+                    0 -0.05em 0 var(--accent-cyan);
+            }
+            99% { 
+                text-shadow: 0.025em 0.05em 0 var(--primary), 0.05em 0 0 var(--secondary),
+                    0 -0.05em 0 var(--accent-cyan);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(0, 255, 163, 0.4);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(0, 255, 163, 0.6);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- REVEAL ANIMATION CLASS --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: var(--text-light);
+            animation: fadeInLeft 0.8s ease;
+        }
+        .logo span { 
+            color: var(--primary);
+            animation: pulse 2s infinite;
+        }
+
+        .nav-links { 
+            display: flex; 
+            gap: 30px; 
+            animation: fadeInRight 0.8s ease;
+        }
+        .nav-links a { 
+            font-weight: 500; 
+            font-size: 0.9rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover { 
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-main {
+            padding: 10px 25px;
+            background: linear-gradient(45deg, var(--primary), #00c27a);
+            color: #000;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(0, 255, 163, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .btn-main:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 0 25px rgba(0, 255, 163, 0.6); 
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            background: radial-gradient(circle at top, #1a1a1a 0%, var(--bg-dark) 70%);
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background particles */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, var(--primary), transparent),
+                radial-gradient(2px 2px at 40px 70px, var(--secondary), transparent),
+                radial-gradient(1px 1px at 90px 40px, var(--accent-cyan), transparent),
+                radial-gradient(1px 1px at 130px 80px, var(--accent-pink), transparent),
+                radial-gradient(2px 2px at 160px 30px, var(--primary), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: float 20s linear infinite;
+            opacity: 0.3;
+        }
+
+        .hero h3 { 
+            font-size: 1.2rem; 
+            color: var(--primary); 
+            letter-spacing: 2px; 
+            margin-bottom: 10px;
+            animation: fadeInUp 0.8s ease;
+            text-transform: uppercase;
+        }
+        .hero h1 { 
+            font-size: 4rem; 
+            line-height: 1.1; 
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+            font-weight: 700;
+        }
+        .hero h1 span { 
+            color: var(--secondary);
+            animation: glitch 2.5s infinite;
+            display: inline-block;
+        }
+        
+        /* Typing Effect Style */
+        .typing-text { 
+            font-size: 1.5rem; 
+            color: var(--text-gray); 
+            margin-bottom: 40px; 
+            height: 30px;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .social-box { 
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+        .social-box a {
+            font-size: 1.5rem;
+            margin: 0 15px;
+            color: var(--text-gray);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .social-box a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--primary);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .social-box a:hover { 
+            color: #000; 
+            border-color: var(--primary); 
+            transform: translateY(-5px) rotate(360deg);
+        }
+        .social-box a:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- ABOUT & SKILLS --- */
+        .section { padding: 100px 10%; }
+        .title { 
+            text-align: center; 
+            font-size: 2.5rem; 
+            margin-bottom: 60px; 
+            position: relative;
+            animation: fadeInUp 0.8s ease;
+        }
+        .title::after {
+            content: ''; 
+            position: absolute; 
+            bottom: -10px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            width: 60px; 
+            height: 3px; 
+            background: var(--primary);
+            animation: pulse 2s infinite;
+        }
+
+        .about-content { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 50px; 
+            align-items: center; 
+        }
+        .about-text h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            animation: fadeInLeft 0.8s ease;
+        }
+        .about-text p { 
+            margin-bottom: 20px; 
+            color: var(--text-gray);
+            animation: fadeInLeft 0.8s ease;
+        }
+        
+        .skill-bar { 
+            margin-bottom: 20px; 
+            animation: fadeInRight 0.8s ease;
+        }
+        .info { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-bottom: 5px; 
+            font-weight: 600; 
+        }
+        .bar { 
+            width: 100%; 
+            height: 8px; 
+            background: #333; 
+            border-radius: 5px; 
+            overflow: hidden; 
+            position: relative;
+        }
+        .bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: slideInUp 2s infinite;
+        }
+        .line { 
+            height: 100%; 
+            background: linear-gradient(90deg, var(--primary), var(--accent-cyan));
+            border-radius: 5px; 
+            width: 0%; 
+            transition: width 1.5s ease;
+            box-shadow: 0 0 10px var(--primary);
+        }
+        
+        /* Skills Animation Widths */
+        .html-css { width: 95%; }
+        .ai-art { width: 90%; }
+        .wordpress { width: 85%; }
+
+        /* --- PORTFOLIO (GALLERY) --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            height: 250px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 255, 163, 0.3);
+        }
+        .portfolio-item img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease;
+        }
+        .layer {
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 0;
+            background: linear-gradient(rgba(0,0,0,0.1), var(--primary));
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-direction: column;
+            text-align: center; 
+            padding: 0 20px; 
+            overflow: hidden; 
+            transition: height 0.5s ease;
+        }
+        .portfolio-item:hover img { 
+            transform: scale(1.1); 
+        }
+        .portfolio-item:hover .layer { 
+            height: 100%; 
+        }
+        .layer h4 { 
+            font-size: 1.5rem; 
+            color: #000; 
+            margin-bottom: 10px;
+            animation: fadeInUp 0.5s ease;
+        }
+        .layer p { 
+            color: #000; 
+            font-size: 0.9rem;
+            animation: fadeInUp 0.5s ease 0.1s both;
+        }
+        .layer a {
+            margin-top: 15px;
+            color: #000;
+            font-size: 1.2rem;
+            animation: fadeInUp 0.5s ease 0.2s both;
+        }
+
+        /* --- SERVICES CARDS --- */
+        .services-container { 
+            display: flex; 
+            gap: 30px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
+        .service-box {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 300px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--primary), transparent);
+            animation: rotate 4s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .service-box:hover::before {
+            opacity: 0.1;
+        }
+        .service-box:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            border-color: var(--secondary); 
+            box-shadow: 0 20px 40px rgba(188, 19, 254, 0.2);
+        }
+        .service-box i { 
+            font-size: 3rem; 
+            color: var(--secondary); 
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .service-box:hover i {
+            transform: scale(1.2) rotate(360deg);
+            color: var(--primary);
+        }
+        .service-box h3 { 
+            font-size: 1.5rem; 
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        .service-box p { 
+            color: var(--text-gray); 
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- CONTACT FORM --- */
+        .contact-container { 
+            display: flex; 
+            justify-content: center; 
+        }
+        .contact-form { 
+            width: 100%; 
+            max-width: 600px; 
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%; 
+            padding: 15px; 
+            background: var(--bg-card); 
+            border: 1px solid #333;
+            color: #fff; 
+            margin-bottom: 15px; 
+            border-radius: 5px; 
+            font-family: 'Poppins';
+            transition: all 0.3s ease;
+        }
+        .contact-form input:focus, .contact-form textarea:focus { 
+            outline: none; 
+            border-color: var(--primary); 
+            box-shadow: 0 0 10px rgba(0, 255, 163, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* --- FOOTER --- */
+        footer { 
+            padding: 30px; 
+            text-align: center; 
+            background: #050505; 
+            color: var(--text-gray); 
+            font-size: 0.9rem; 
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero::before { animation-duration: 30s; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Chamindu<span>.dev</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn-main">Hire Me</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <h3>HELLO, IT'S ME</h3>
+        <h1>Chamindu <span>Ransika</span></h1>
+        <div class="typing-text">I am a <span id="typewriter"></span></div>
+        
+        <div class="social-box">
+            <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.fiverr.com/YOUR-FIVERR" target="_blank"><i class="fa-solid fa-briefcase"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <a href="#portfolio" class="btn-main">Check My Work</a>
+    </section>
+
+    <section class="section" id="about">
+        <h2 class="title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>AI & Web Expert</h3>
+                <p>I specialize in building high-performance websites and generating stunning AI art. With a unique blend of technical coding skills and creative artistic vision, I help businesses stand out in the digital world.</p>
+                <p>From WordPress e-commerce stores to custom AI character designs, I deliver quality and innovation.</p>
+            </div>
+            
+            <div class="about-skills">
+                <div class="skill-bar">
+                    <div class="info"><span>Web Development (HTML/CSS/WP)</span><span>95%</span></div>
+                    <div class="bar"><div class="line html-css"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="info"><span>AI Art Generation (Midjourney)</span><span>90%</span></div>
+                    <div class="bar"><div class="line ai-art"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="info"><span>WooCommerce</span><span>85%</span></div>
+                    <div class="bar"><div class="line wordpress"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <h2 class="title">My Services</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <i class="fa-solid fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Professional websites using WordPress & Custom Code. Fast, responsive, and SEO friendly.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>AI Art & Design</h3>
+                <p>Creating concept art, character designs, and illustrations using advanced AI tools.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>E-Commerce</h3>
+                <p>Full online store setup with payment gateways, inventory, and modern design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="portfolio">
+        <h2 class="title">Latest Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x300/000000/00ffa3?text=AI+Character+Design" alt="AI Art">
+                <div class="layer">
+                    <h4>AI Character Design</h4>
+                    <p>Generated using Midjourney V6</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x300/000000/bc13fe?text=E-Commerce+Site" alt="Web Design">
+                <div class="layer">
+                    <h4>E-Commerce Website</h4>
+                    <p>WordPress + WooCommerce Build</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x300/000000/ffffff?text=Concept+Art" alt="Concept Art">
+                <div class="layer">
+                    <h4>Sci-Fi Concept Art</h4>
+                    <p>Digital Illustration for Game</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2 class="title">Contact Me</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn-main" style="width: 100%; border:none; cursor:pointer;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed by Chamindu Ransika | © 2024 All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Typewriter Effect
+        const textElement = document.getElementById("typewriter");
+        const texts = ["Web Developer", "AI Artist", "Freelancer"];
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+
+        (function type() {
+            if (count === texts.length) {
+                count = 0;
+            }
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+
+            textElement.textContent = letter;
+            if (letter.length === currentText.length) {
+                count++;
+                index = 0;
+                setTimeout(type, 2000); // Wait before next word
+            } else {
+                setTimeout(type, 100); // Typing speed
+            }
+        }());
+
+        // Smooth scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        // Add reveal class to elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToReveal = document.querySelectorAll('.skill-bar, .service-box, .portfolio-item, .about-text h3, .about-text p');
+            elementsToReveal.forEach(el => el.classList.add('reveal'));
+        });
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate skill bars when in viewport
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.line');
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    bar.style.width = bar.classList.contains('html-css') ? '95%' : 
+                                     bar.classList.contains('ai-art') ? '90%' : '85%';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateSkillBars);
+        window.addEventListener('load', animateSkillBars);
+    </script>
+</body>
+</html>
